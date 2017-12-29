@@ -29,6 +29,10 @@ exports.guess = function(id){
 	];
 }
 
+exports.MovieTitle = function(){
+	return Movies.ById(MovieID).title;
+}
+
 exports.hint = function(){
 	const Movie = Movies.ById(MovieID);
 	const ProposedHints = ["locale", "year", "actor", "girl", "gadgets"];
@@ -38,6 +42,7 @@ exports.hint = function(){
 
 	if(possibleHints == 0){
 		//user failed to guess movie in time
+		return false;
 		return arrRandom([
 			"That's all of the hints I have for this movie, say 'I give up', or 'Give me another movie'",
 			"No more hints for this movie, time to start guessing!",
