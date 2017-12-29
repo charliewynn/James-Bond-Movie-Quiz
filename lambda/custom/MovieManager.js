@@ -8,14 +8,16 @@ exports.guess = function(id){
 	if(Guesses.indexOf(id) > -1)
 		return [false, "You already Guessed that!"];
 	Guesses.push(id);
-	if(MovieID === id)
+	if(MovieID === id) {
+		//if they get it right, return a random fact about the movie
 		return [
 			true,
 			arrRandom([
 				"Great Work!",
 				"Nice Job"
-			])
+			] + " " + arrRandom(Movies.ById(MovieID).factsForWinners))
 		];
+	}
 	const badGuessName = Movies.ById(id).title;
 	return [
 		false,
@@ -36,7 +38,11 @@ exports.hint = function(){
 
 	if(possibleHints == 0){
 		//user failed to guess movie in time
-		return false;
+		return arrRandom([
+			"That's all of the hints I have for this movie, say 'I give up', or 'Give me another movie'",
+			"No more hints for this movie, time to start guessing!",
+			"Sorry, that was my last hint, you'll have to go it alone now"
+		]);
 	}
 	const hint = arrRandom(possibleHints);
 	HintsUsed.push(hint);

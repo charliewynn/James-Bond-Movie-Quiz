@@ -9,7 +9,11 @@ const DrNo = {
 	bondGirl : "Honey Rider",
 	gadgets : "idk, and something else",
 	year : 1962,
-	allowedHints : ["locales", "year", "actor", "girl", "gadgets"]
+	allowedHints : ["locales", "year", "actor", "girl", "gadgets"],
+	factsForWinners : [
+		"something",
+		"something else"
+	]
 };
 const FromRussiaWithLove = {
 	id : 2,
@@ -22,14 +26,35 @@ const FromRussiaWithLove = {
 	gadgets : "suitcase",
 	year : 1964,
 	villian : "some bad guy",
-	allowedHints : ["locales", "year", "actor", "girl", "gadgets", "villian"]
+	allowedHints : ["locales", "year", "actor", "girl", "gadgets", "villian"],
+	factsForWinners : [
+		"idk",
+		"something something"
+	]
+};
+const Goldfinger = {
+	id : 3,
+	title : "GoldFinger",
+	locales : "Austria, England, and Kentucky",
+	bondActor : Connery,
+	actorsNth : "third",
+	girlActress : "idk",
+	bondGirl : "Pussy Galore",
+	gadgets : "Shoe Tracking device and the debut of the Austin Martin DB5 Spy car",
+	year : 1965,
+	allowedHints : ["locales", "year", "actor", "girl", "gadgets"],
+	factsForWinners : [
+		"Goldfinger actor spoke so little english that most of his lines had to be re-dubbed by someone else",
+		"something something"
+	]
 }
 
 
 const Movies =
 [
 	DrNo,
-	FromRussiaWithLove
+	FromRussiaWithLove,
+	Goldfinger
 ]
 
 exports.Movies = Movies;
