@@ -1,60 +1,86 @@
 {
-    "interactionModel":{
-        "languageModel":{
-            "invocationName":"hello world",
-            "types":[],
-            "intents":[
+    "interactionModel": {
+        "languageModel": {
+            "types": [
                 {
-                  "name": "AMAZON.CancelIntent",
-                  "samples": []
-                },
-                {
-                  "name": "AMAZON.HelpIntent",
-                  "samples": []
-                },
-                {
-                  "name": "AMAZON.StopIntent",
-                  "samples": []
-                },
-                {
-                    "name":"NewGameIntent",
-                    "slots":[
-
-                    ],
-                    "samples":[
-                        "Start Game",
-                        "Start Over"
-                    ]
-                },
-                {
-                    "name":"GuessIntent",
-                    "slots":[
+                    "name": "JamesBondFilms",
+                    "values": [
                         {
-                            "name":"film",
-                            "type":"AMAZON.US_FIRST_NAME"
+                            "id": "1",
+                            "name": {
+                                "value": "Dr. No",
+                                "synonyms": []
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "From Russia With Love",
+                                "synonyms": []
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "Goldfinger",
+                                "synonyms": []
+                            }
                         }
-                    ],
-                    "samples":[
-                        "{film}",
-                        "is it {film}"
                     ]
+                }
+            ],
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
                 },
                 {
-                    "name":"GiveUpIntent",
-                    "samples":[
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GiveUpIntent",
+                    "samples": [
                         "I give up",
                         "Just tell me"
+                    ],
+                    "slots": []
+                },
+                {
+                    "name": "GuessIntent",
+                    "samples": [
+                        "{film}",
+                        "is it {film}"
+                    ],
+                    "slots": [
+                        {
+                            "name": "film",
+                            "type": "JamesBondFilms"
+                        }
                     ]
                 },
                 {
-                    "name":"HintIntent",
-                    "samples":[
+                    "name": "HintIntent",
+                    "samples": [
                         "Give me a hint",
                         "I need a hint"
-                    ]
-
+                    ],
+                    "slots": []
+                },
+                {
+                    "name": "NewGameIntent",
+                    "samples": [
+                        "Start Game",
+                        "Start Over"
+                    ],
+                    "slots": []
                 }
-            ]
+            ],
+            "invocationName": "hello world"
         }
     }
 }

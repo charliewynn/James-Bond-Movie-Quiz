@@ -29,6 +29,12 @@ exports.guess = function(id){
 	];
 }
 
+exports.NewGame = function(){
+	MovieID = arrRandom(Movies.Movies).id;
+	Guesses = []; //ids of guessed movies
+	HintsUsed = [];
+}
+
 exports.MovieTitle = function(){
 	return Movies.ById(MovieID).title;
 }

@@ -28,6 +28,10 @@ var handlers = {
 		this.emit("GiveUp");
 	},
 	'BeginGame': function () {
+		if(Object.keys(this.attributes).length !== 0){
+			if(this.attributes['movieData'])
+				MovieManager.NewGame();
+		}
 		var hint = MovieManager.hint();
 		var data = MovieManager.export();
 
@@ -71,6 +75,8 @@ var handlers = {
 	},
 	'GiveUp': function () {
 		this.response.speak("It's okay, your movie was " + MovieManager.MovieTitle);
+		MovieManager.NewGame();
+		delete this.attributes['movieData'];
 		this.emit(':responseReady');
 	},
 	'GetHint': function () {
