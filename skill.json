@@ -3,18 +3,16 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "Quiz your knowledge of James Bond Movies",
           "examplePhrases": [
-            "Alexa open hello world",
-            "Alexa tell hello world I am Jeff",
-            "Alexa tell hello world my name is Peter"
+            "Alexa start James Bond Movie Quiz"
           ],
           "name": "James Bond Movie Quiz",
-          "description": "Sample Full Description"
+          "description": "Alexa gives you hints about a James Bond movie until you can guess it"
         }
       },
       "isAvailableWorldwide": true,
-      "testingInstructions": "Sample Testing Instructions.",
+      "testingInstructions": "There's really only one 'mode' to the skill. Start a quiz and play until you get it or give up!",
       "category": "EDUCATION_AND_REFERENCE",
       "distributionCountries": []
     },

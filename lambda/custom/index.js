@@ -18,6 +18,12 @@ var handlers = {
 	'GuessIntent': function () {
 		this.emit("DoGuess");
 	},
+	'HintIntent':function(){
+		this.emit("GetHint");
+	},
+	'GiveUpIntent': function(){
+		this.emit("GiveUp");
+	},
 	'BeginGame': function () {
 		var hint = MovieManager.hint();
 		var data = MovieManager.export();

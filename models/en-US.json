@@ -17,29 +17,42 @@
                   "samples": []
                 },
                 {
-                    "name":"HelloWorldIntent",
+                    "name":"NewGameIntent",
                     "slots":[
 
                     ],
                     "samples":[
-                        "hello",
-                        "say hello",
-                        "say hello world"
+                        "Start Game",
+                        "Start Over"
                     ]
                 },
                 {
-                    "name":"MyNameIsIntent",
+                    "name":"GuessIntent",
                     "slots":[
                         {
-                            "name":"name",
+                            "name":"film",
                             "type":"AMAZON.US_FIRST_NAME"
                         }
                     ],
                     "samples":[
-                        "my name is {name}",
-                        "i am {name}",
-                        "you can call me {name}"
+                        "{film}",
+                        "is it {film}"
                     ]
+                },
+                {
+                    "name":"GiveUpIntent",
+                    "samples":[
+                        "I give up",
+                        "Just tell me"
+                    ]
+                },
+                {
+                    "name":"HintIntent",
+                    "samples":[
+                        "Give me a hint",
+                        "I need a hint"
+                    ]
+
                 }
             ]
         }
