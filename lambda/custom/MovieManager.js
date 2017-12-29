@@ -15,7 +15,7 @@ exports.guess = function(id){
 			arrRandom([
 				"Great Work!",
 				"Nice Job"
-			] + " " + arrRandom(Movies.ById(MovieID).factsForWinners))
+			]) + " " + arrRandom(Movies.ById(MovieID).factsForWinners)
 		];
 	}
 	const badGuessName = Movies.ById(id).title;

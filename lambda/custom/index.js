@@ -4,18 +4,21 @@ var MovieManager = require("./MovieManager");
 
 exports.handler = function (event, context) {
 	var alexa = Alexa.handler(event, context);
+	alexa.appId = "amzn1.ask.skill.0a690982-03a0-4092-9033-88504b84245a";
 	alexa.registerHandlers(handlers);
 	alexa.execute();
 };
 
 var handlers = {
 	'LaunchRequest': function () {
+		console.log("Start Intent");
 		this.emit("BeginGame");
 	},
 	'NewGameIntent': function () {
 		this.emit("BeginGame");
 	},
 	'GuessIntent': function () {
+		console.log("Start Guess Intent");
 		this.emit("DoGuess");
 	},
 	'HintIntent':function(){
@@ -28,21 +31,30 @@ var handlers = {
 		var hint = MovieManager.hint();
 		var data = MovieManager.export();
 
-		this.attributes = data;
+		this.attributes['movieData'] = data;
+		console.log("Saving Attrs", this.attributes);
 		this.response.speak("Alright, I've thought of a Bond Movie.. Your first hint is: " +
 			hint).listen("Guess a Bond Movie, or say 'Give me another hint'");
 		this.emit(":responseReady");
 	},
 	'DoGuess': function () {
+		console.log("Attrs", this.attributes);
 		if(Object.keys(this.attributes).length === 0){
 			this.emit("BeginGame");
 			return;
 		}
-		MovieManager.continue(this.attributes);
-		var theirGuess = this.event.request.intent.slots.film.value
+		MovieManager.continue(this.attributes['movieData']);
+		var theirGuess = this.event.request.intent.slots.film.value;
+		if(theirGuess != parseInt(theirGuess)){
+			console.log("They guessed a non number");
+			this.response.speak("I didn't understand your guess, please guess a James Bond Movie");
+			this.emit(":responseReady");
+		}
+		theirGuess = parseInt(theirGuess);
 		var guessRes = MovieManager.guess(theirGuess);
 		if (guessRes[0]) {
 			//guess was good
+			console.log("They got it right", guessRes);
 			this.response.speak(guessRes[1]);
 		}
 		else {
