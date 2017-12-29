@@ -51,7 +51,7 @@ var handlers = {
 		var theirGuess = this.event.request.intent.slots.film.value;
 		if(theirGuess != parseInt(theirGuess)){
 			console.log("They guessed a non number");
-			this.response.speak("I didn't understand your guess, please guess a James Bond Movie");
+			this.response.speak("I didn't understand your guess ("+theirGuess+"), please guess a James Bond Movie");
 			this.emit(":responseReady");
 		}
 		theirGuess = parseInt(theirGuess);
