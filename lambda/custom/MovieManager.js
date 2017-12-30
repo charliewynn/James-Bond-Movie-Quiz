@@ -23,7 +23,7 @@ exports.guess = function(id){
 		false,
 		arrRandom([
 			"Sorry, try again. ",
-			"Whoops, that's not right. ",
+			"hmm, that's not right. ",
 			"Nope, it's not " + badGuessName + ". "
 		])
 	];
@@ -88,7 +88,8 @@ exports.hint = function(){
 		case Movies.hintTypes.locales:
 			return arrRandom([
 				Movie.locales + " were featured in this film",
-				"Some of the places featured in the film are " + Movie.locales
+				"Some of the places featured in the film are " + Movie.locales,
+				"You might remember Bond visiting " + Movie.locales + " in the movie"
 			]);
 		case Movies.hintTypes.year:
 			return arrRandom([
@@ -98,7 +99,7 @@ exports.hint = function(){
 		case Movies.hintTypes.actor:
 			return arrRandom([
 				`This was ${Movie.bondActor}'s ${Movie.actorsNth} Bond Film`,
-				`${Movie.bondActor} played Bond in this film`
+				`${Movie.bondActor} played Bond in this film, it was his ${Movie.actorsNth} Bond film`
 			]);
 	}
 

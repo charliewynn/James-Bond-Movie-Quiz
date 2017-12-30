@@ -181,7 +181,7 @@ const TheSpyWhoLovedMe = {
 	actorsNth : "third",
 	year : 1977,
 	car : "Lotus Espirit S1",
-	bondGirl : "Anya Amasova code name 'Triple X'",
+	bondGirl : "Anya Amasova, code name 'Triple X'",
 	girlActress : "Barbara Bach",
 	allowedHints : [year, actor, girl, car],
 	factsForWinners : [
@@ -199,8 +199,10 @@ const Moonraker = {
 	girlActress : "Lois Chiles",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Charliehasntfinishedthis",
-		"IllFillTthisInLater"
+		"Ian Fleming originally intended Moonrake to become a movie even before he began writing the book",
+		"After receiving fan mail asking for Jaws to be a good guy, director Lewis Gilbert changed the ending so Jaws saves the day",
+		"The laser battle on the space station holds the world record for most number of zero gravity wires in one scene",
+		"Bond is never seen holding a pistol during Moonraker"
 	]
 };
 const ForYourEyesOnly = {
@@ -214,8 +216,9 @@ const ForYourEyesOnly = {
 	girlActress : "Carole Bouquet",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Charliehasntfinishedthis",
-		"IllFillTthisInLater"
+		"The monks who reside at the monastery protested to the filming, but the Greek Supreme Court ruled the outside of the monastery was local gonvernment property and availabel for filming",
+		"Roger Moore struggled to do the climbing scenes due to his fear of heights",
+		"On the final day of filming the bobsleigh chase one of the stuntmen was killed after becoming trapped under the sled"
 	]
 };
 const Octopussy = {
@@ -223,12 +226,12 @@ const Octopussy = {
 	title : "Octopussy",
 	bondActor : Moore,
 	actorsNth : "sixth",
-	locales : "Sotheby's London, Moscow, West and East Berlin, and Karl-Marx-Stadt Germany",
+	locales : "Sotheby's London, Moscow, east and west Berlin, and Karl-Marx-Stadt Germany",
 	year : 1983,
 	allowedHints : [year, actor, locales],
 	factsForWinners : [
-		"Charliehasntfinishedthis",
-		"IllFillTthisInLater"
+		"Bonds ally Vijay was a real life prfessional tennis player",
+		"The Fabergé egg in the film is real, made in 1897 and called the Coronation Egg"
 	]
 };
 const AViewToAKill = {
@@ -242,8 +245,8 @@ const AViewToAKill = {
 	girlActress : "Tanya Roberts",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Charliehasntfinishedthis",
-		"IllFillTthisInLater"
+		"The airship in the film is show to take two minutes, in reality it would take up to 24 hours",
+		"A view to a kill was the first bond film with a premiere outside the U.K."
 	]
 };
 const TheLivingDaylights = {
@@ -257,8 +260,8 @@ const TheLivingDaylights = {
 	girlActress : "Maryam d'Abo",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Charliehasntfinishedthis",
-		"IllFillTthisInLater"
+		"The macaw in the kitchen scene is the same bird featured in For your eyes only",
+		"In the book, Ian Fleming modeled the woman sniper after his half sister Amaryllis Fleming"
 	]
 };
 const LicenceToKill = {
@@ -272,8 +275,8 @@ const LicenceToKill = {
 	girlActress : "Carey Lowell",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Charliehasntfinishedthis",
-		"IllFillTthisInLater"
+		"Licence to Kill is the first bond film which did not use the title of an Ian Fleming story",
+		"No part of Licence to kill was filmed in the U.K."
 	]
 };
 const GoldenEye = {
@@ -302,7 +305,8 @@ const TomorrowNeverDies = {
 	girlActress : "Michelle Yeoh",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Over 15 BMWs were destroyed in the filming of Tomorrow Never Dies"
+		"Over 15 BMWs were destroyed in the filming of Tomorrow Never Dies",
+		"Tomorrow Never Dies opened the say day as Titanic"
 	]
 };
 const TheWorldIsNotEnough = {
@@ -316,7 +320,8 @@ const TheWorldIsNotEnough = {
 	girlActress : "Denise Richards",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"The World is not enough is the Bond family motto"
+		"The World is not enough is the Bond family motto",
+		"The pre-title sequence in The World is not Enough is the longest for bond, at 14 minutes"
 	]
 };
 const DieAnotherDay = {
@@ -331,8 +336,8 @@ const DieAnotherDay = {
 	girlActress : "Halle Berry",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Charliehasntfinishedthis",
-		"IllFillTthisInLater"
+		"Halle Berry was injured during filming when debris from a smoke grenade flew into her eye",
+		"In early drafts of the script Bond's counterpart in Tomorrow never dies, Wai Lin, was to play the hotel manager in Hong Kong"
 	]
 };
 const CasinoRoyale = {
@@ -347,7 +352,7 @@ const CasinoRoyale = {
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
 		"The car barrel roll stunt near the end of Casino Royale broke the world record for most barrel rolls assisted by a cannon, seven complete rolls",
-		"IllFillTthisInLater"
+		"Sony Pictures Entertainment traded the rights to Casino Royale in exchange for the rights to Spider-Man"
 	]
 };
 const QuantumOfSolace = {
@@ -361,8 +366,8 @@ const QuantumOfSolace = {
 	girlActress : "Olga Kurylenko",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Charliehasntfinishedthis",
-		"IllFillTthisInLater"
+		"Quantum of Solace is the shortest bond film in the series at one hour and thirty six minutes",
+		"Bond Actor Daniel Craig helped with the script writing, which was interupted due to a writers strike"
 	]
 };
 const Skyfall = {
@@ -376,7 +381,8 @@ const Skyfall = {
 	girlActress : "Bérénice Marlohe",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Skyfall's cast went through two hundred rounds of ammunition while undergoing training"
+		"Skyfall's cast went through two hundred rounds of ammunition while undergoing training",
+		"Skyfall is the first bond film to gross over one billion dollars worldwide"
 	]
 };
 const Spectre = {
@@ -390,8 +396,8 @@ const Spectre = {
 	girlActress : "Léa Seydoux",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Charliehasntfinishedthis",
-		"IllFillTthisInLater"
+		"Spectre's car expenses totalled 48 million dollars, smashing a record sever Aston Martins",
+		"The organization, Spectre, was off limits for bond films following a 1961 legal dispute. After the owner to the rights of Spectre died in 2006 M.G.M. was able to buy back the rights from his estate"
 	]
 };
 

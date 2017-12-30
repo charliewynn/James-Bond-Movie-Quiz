@@ -105,7 +105,8 @@ var handlers = {
 		this.emit(':responseReady');
 	},
 	'AMAZON.HelpIntent': function () {
-		this.response.speak("You can try: 'alexa, start James Bond Movie Quiz'");
+		this.response.speak("say 'alexa, start James Bond Movie Quiz' to start a game, if you need a hint, say 'I need a hint'")
+		.listen("Say I need a hint, or I give up");
 		this.emit(':responseReady');
 	},
 	'AMAZON.CancelIntent': function () {
