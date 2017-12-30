@@ -29,8 +29,13 @@ exports.guess = function(id){
 	];
 }
 
-exports.NewGame = function(){
+exports.NewGame = function(lastid){
+
 	MovieID = arrRandom(Movies.Movies).id;
+	while(lastid == MovieID){
+		MovieID = arrRandom(Movies.Movies).id;
+	}
+
 	Guesses = []; //ids of guessed movies
 	HintsUsed = [];
 }
@@ -41,43 +46,56 @@ exports.MovieTitle = function(){
 
 exports.hint = function(){
 	const Movie = Movies.ById(MovieID);
-	const ProposedHints = ["locale", "year", "actor", "girl", "gadgets"];
-	let possibleHints = ProposedHints.filter(h=>
-		HintsUsed.indexOf(h) == -1 &&
-		Movie.allowedHints.indexOf(h) > -1);
+	let possibleHints = Movie.allowedHints.filter(h=>HintsUsed.indexOf(h) == -1);
 
 	if(possibleHints == 0){
 		//user failed to guess movie in time
 		return false;
-		return arrRandom([
-			"That's all of the hints I have for this movie, say 'I give up', or 'Give me another movie'",
-			"No more hints for this movie, time to start guessing!",
-			"Sorry, that was my last hint, you'll have to go it alone now"
-		]);
 	}
 	const hint = arrRandom(possibleHints);
 	HintsUsed.push(hint);
 	switch(hint){
-		case "gadgets":
+		case Movies.hintTypes.car:
+			return arrRandom([
+				"Also appearing was Bond's famous " + Movie.car,
+				"You may remember Bond driving his " + Movie.car
+			]);
+		case Movies.hintTypes.villian:
+			return arrRandom([
+				"Bond's main adversary in the film was " + Movie.villian,
+				"Bond faced off with " + Movie.villian
+			]);
+		case Movies.hintTypes.henchmen:
+			return arrRandom([
+				"A memorable henchman from the movie was " + Movie.henchmen,
+				"You may remember Bond outwitting " + Movie.henchmen,
+				Movie.henchmen + " put up a fight in this movie, but as always, Bond prevailed"
+			]);
+		case Movies.hintTypes.sidekick:
+			return arrRandom([
+				'In the film James had some help from ' + Movie.sidekick,
+				Movie.sidekick + " played a crucial role in the movie"
+			]);
+		case Movies.hintTypes.gadgets:
 			return arrRandom([
 				'Some memorable gadgets were ' + Movie.gadgets
 			]);
-		case "girl":
+		case Movies.hintTypes.girl:
 			return arrRandom([
 				`${Movie.girlActress} portrayed ${Movie.bondGirl}`,
 				`${Movie.bondGirl} was played by ${Movie.girlActress}`
 			]);
-		case "locale":
+		case Movies.hintTypes.locales:
 			return arrRandom([
 				Movie.locales + " were featured in this film",
 				"Some of the places featured in the film are " + Movie.locales
 			]);
-		case "year":
+		case Movies.hintTypes.year:
 			return arrRandom([
 				"This Bond film came out in " + Movie.year,
 				"The movie I'm thinking of was released in " + Movie.year
 			]);
-		case "actor":
+		case Movies.hintTypes.actor:
 			return arrRandom([
 				`This was ${Movie.bondActor}'s ${Movie.actorsNth} Bond Film`,
 				`${Movie.bondActor} played Bond in this film`

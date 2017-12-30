@@ -30,12 +30,13 @@ var handlers = {
 	'BeginGame': function () {
 		if(Object.keys(this.attributes).length !== 0){
 			if(this.attributes['movieData'])
-				MovieManager.NewGame();
+				MovieManager.NewGame(this.attributes['lastID']);
 		}
 		var hint = MovieManager.hint();
 		var data = MovieManager.export();
 
 		this.attributes['movieData'] = data;
+		this.attributes['lastID'] = data.MovieID;
 		console.log("Saving Attrs", this.attributes);
 		this.response.speak("Alright, I've thought of a Bond Movie.. Your first hint is: " +
 			hint).listen("Guess a Bond Movie, or say 'Give me another hint'");
@@ -48,11 +49,19 @@ var handlers = {
 			return;
 		}
 		MovieManager.continue(this.attributes['movieData']);
-		var theirGuess = this.event.request.intent.slots.film.value;
+		const slotdata = getSlotValues(this.event.request.intent.slots).film;
+		if(!slotdata.isValidated) {
+			console.log("Could not find resolution", slotdata);
+			this.response.speak("I didn't quite get that. Guess a Bond Film or say 'I Give Up'");
+			this.emit(":responseReady");
+			return;
+		}
+		var theirGuess = slotdata.id;
 		if(theirGuess != parseInt(theirGuess)){
 			console.log("They guessed a non number");
 			this.response.speak("I didn't understand your guess ("+theirGuess+"), please guess a James Bond Movie");
 			this.emit(":responseReady");
+			return;
 		}
 		theirGuess = parseInt(theirGuess);
 		var guessRes = MovieManager.guess(theirGuess);
@@ -60,6 +69,7 @@ var handlers = {
 			//guess was good
 			console.log("They got it right", guessRes);
 			this.response.speak(guessRes[1]);
+			delete this.attributes['movieData'];
 		}
 		else {
 			//guess was bad
@@ -74,8 +84,7 @@ var handlers = {
 		this.emit(":responseReady");
 	},
 	'GiveUp': function () {
-		this.response.speak("It's okay, your movie was " + MovieManager.MovieTitle);
-		MovieManager.NewGame();
+		this.response.speak("It's okay, your movie was " + MovieManager.MovieTitle());
 		delete this.attributes['movieData'];
 		this.emit(':responseReady');
 	},
@@ -108,3 +117,50 @@ var handlers = {
 		this.response.speak("Sorry, I didn't get that. You can try: 'alexa, start James Bond Movie Quiz'");
 	}
 };
+
+function getSlotValues (filledSlots) {
+    //given event.request.intent.slots, a slots values object so you have
+    //what synonym the person said - .synonym
+    //what that resolved to - .resolved
+    //and if it's a word that is in your slot values - .isValidated
+    let slotValues = {};
+
+    console.log('The filled slots: ' + JSON.stringify(filledSlots));
+    Object.keys(filledSlots).forEach(function(item) {
+        //console.log("item in filledSlots: "+JSON.stringify(filledSlots[item]));
+        var name = filledSlots[item].name;
+        //console.log("name: "+name);
+        if(filledSlots[item]&&
+           filledSlots[item].resolutions &&
+           filledSlots[item].resolutions.resolutionsPerAuthority[0] &&
+           filledSlots[item].resolutions.resolutionsPerAuthority[0].status &&
+           filledSlots[item].resolutions.resolutionsPerAuthority[0].status.code ) {
+
+            switch (filledSlots[item].resolutions.resolutionsPerAuthority[0].status.code) {
+                case "ER_SUCCESS_MATCH":
+                    slotValues[name] = {
+                        "synonym": filledSlots[item].value,
+												"resolved": filledSlots[item].resolutions.resolutionsPerAuthority[0].values[0].value.name,
+												"id": filledSlots[item].resolutions.resolutionsPerAuthority[0].values[0].value.id,
+                        "isValidated": true
+                    };
+                    break;
+                case "ER_SUCCESS_NO_MATCH":
+                    slotValues[name] = {
+                        "synonym": filledSlots[item].value,
+                        "resolved": filledSlots[item].value,
+                        "isValidated":false
+                    };
+                    break;
+                }
+            } else {
+                slotValues[name] = {
+                    "synonym": filledSlots[item].value,
+                    "resolved": filledSlots[item].value,
+                    "isValidated": false
+                };
+            }
+        },this);
+        //console.log("slot values: "+JSON.stringify(slotValues));
+        return slotValues;
+}
