@@ -1,86 +1,147 @@
 {
-    "interactionModel": {
-        "languageModel": {
-            "types": [
-                {
-                    "name": "JamesBondFilms",
-                    "values": [
-                        {
-                            "id": "1",
-                            "name": {
-                                "value": "Dr. No",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": "2",
-                            "name": {
-                                "value": "From Russia With Love",
-                                "synonyms": []
-                            }
-                        },
-                        {
-                            "id": "3",
-                            "name": {
-                                "value": "Goldfinger",
-                                "synonyms": []
-                            }
-                        }
-                    ]
-                }
-            ],
-            "intents": [
-                {
-                    "name": "AMAZON.CancelIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.HelpIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.StopIntent",
-                    "samples": []
-                },
-                {
-                    "name": "GiveUpIntent",
-                    "samples": [
-                        "I give up",
-                        "Just tell me"
-                    ],
-                    "slots": []
-                },
-                {
-                    "name": "GuessIntent",
-                    "samples": [
-                        "{film}",
-                        "is it {film}"
-                    ],
-                    "slots": [
-                        {
-                            "name": "film",
-                            "type": "JamesBondFilms"
-                        }
-                    ]
-                },
-                {
-                    "name": "HintIntent",
-                    "samples": [
-                        "Give me a hint",
-                        "I need a hint"
-                    ],
-                    "slots": []
-                },
-                {
-                    "name": "NewGameIntent",
-                    "samples": [
-                        "Start Game",
-                        "Start Over"
-                    ],
-                    "slots": []
-                }
-            ],
-            "invocationName": "hello world"
-        }
-    }
+	"interactionModel": {
+		"languageModel": {
+			"types": [
+				{
+					"name": "JamesBondFilms",
+					"values": [
+						{ "id": "1", "name": { "value": "Dr. No", "synonyms": []
+							}
+						},
+						{ "id": "2",
+    "name": { "value": "From Russia With Love", "synonyms": []
+							}
+						},
+						{ "id": "3", "name": { "value": "GoldFinger", "synonyms": []
+							}
+						},
+						{ "id": "4", "name": { "value": "Thunderball", "synonyms": []
+							}
+						},
+						{ "id": "5",
+    "name": { "value": "You Only Live Twice", "synonyms": []
+							}
+						},
+						{ "id": "6",
+    "name": { "value": "On Her Majesty's Secret Service", "synonyms": []
+							}
+						},
+						{ "id": "7",
+    "name": { "value": "Diamonds Are Forever", "synonyms": []
+							}
+						},
+						{ "id": "8", "name": { "value": "Live and Let Die", "synonyms": []
+							}
+						},
+						{ "id": "9",
+    "name": { "value": "The Man with the Golden Gun", "synonyms": []
+							}
+						},
+						{ "id": "10",
+    "name": { "value": "The Spy who Loved Me", "synonyms": []
+							}
+						},
+						{ "id": "11", "name": { "value": "Moonraker", "synonyms": []
+							}
+						},
+						{ "id": "12",
+    "name": { "value": "For your Eyes Only", "synonyms": []
+							}
+						},
+						{ "id": "13", "name": { "value": "Octopussy", "synonyms": []
+							}
+						},
+						{ "id": "14", "name": { "value": "A View to a Kill", "synonyms": []
+							}
+						},
+						{ "id": "15",
+    "name": { "value": "The Living Daylights", "synonyms": []
+							}
+						},
+						{ "id": "16", "name": { "value": "Licence To Kill", "synonyms": []
+							}
+						},
+						{ "id": "17", "name": { "value": "GoldenEye", "synonyms": []
+							}
+						},
+						{ "id": "18",
+    "name": { "value": "Tomorrow Never Dies", "synonyms": []
+							}
+						},
+						{ "id": "19",
+    "name": { "value": "The World is not Enough", "synonyms": []
+							}
+						},
+						{ "id": "20", "name": { "value": "Die Another Day", "synonyms": []
+							}
+						},
+						{ "id": "21", "name": { "value": "Casino Royale", "synonyms": []
+							}
+						},
+						{ "id": "22", "name": { "value": "Quantum of Solace", "synonyms": []
+							}
+						},
+						{ "id": "23", "name": { "value": "Skyfall", "synonyms": []
+							}
+						},
+						{ "id": "24", "name": { "value": "Spectre", "synonyms": []
+							}
+						}
+					]
+				}
+			],
+			"intents": [
+				{
+					"name": "AMAZON.CancelIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.HelpIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.StopIntent",
+					"samples": []
+				},
+				{
+					"name": "GiveUpIntent",
+					"samples": [
+						"I give up",
+						"Just tell me"
+					],
+					"slots": []
+				},
+				{
+					"name": "GuessIntent",
+					"samples": [
+						"{film}",
+						"is it {film}"
+					],
+					"slots": [
+						{
+							"name": "film",
+							"type": "JamesBondFilms"
+						}
+					]
+				},
+				{
+					"name": "HintIntent",
+					"samples": [
+						"Give me a hint",
+						"I need a hint"
+					],
+					"slots": []
+				},
+				{
+					"name": "NewGameIntent",
+					"samples": [
+						"Start Game",
+						"Start Over"
+					],
+					"slots": []
+				}
+			],
+			"invocationName": "hello world"
+		}
+	}
 }

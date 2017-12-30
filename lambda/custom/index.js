@@ -49,7 +49,7 @@ var handlers = {
 		const slotdata = getSlotValues(this.event.request.intent.slots).film;
 		if(!slotdata.isValidated) {
 			console.log("Could not find resolution", slotdata);
-			this.response.speak("I didn't quite get that. Guess a Bond Film or say 'I Give Up'");
+			this.response.speak("I didn't quite get that. Guess a Bond Film or say 'I Give Up'").listen("Ask for another hint or say 'I Give Up'");
 			this.emit(":responseReady");
 			return;
 		}
@@ -115,6 +115,7 @@ var handlers = {
 	},
 	'Unhandled': function () {
 		this.response.speak("Sorry, I didn't get that. You can try: 'alexa, start James Bond Movie Quiz'");
+		this.emit(':responseReady');
 	}
 };
 
