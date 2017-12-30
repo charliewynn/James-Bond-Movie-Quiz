@@ -28,10 +28,7 @@ var handlers = {
 		this.emit("GiveUp");
 	},
 	'BeginGame': function () {
-		if(Object.keys(this.attributes).length !== 0){
-			if(this.attributes['movieData'])
-				MovieManager.NewGame(this.attributes['lastID']);
-		}
+		MovieManager.NewGame(this.attributes['lastID']);
 		var hint = MovieManager.hint();
 		var data = MovieManager.export();
 
@@ -43,8 +40,8 @@ var handlers = {
 		this.emit(":responseReady");
 	},
 	'DoGuess': function () {
-		console.log("Attrs", this.attributes);
 		if(Object.keys(this.attributes).length === 0){
+			console.log("tried to guess with no current game");
 			this.emit("BeginGame");
 			return;
 		}
@@ -69,7 +66,7 @@ var handlers = {
 			//guess was good
 			console.log("They got it right", guessRes);
 			this.response.speak(guessRes[1]);
-			delete this.attributes['movieData'];
+			this.attributes['movieData'] = undefined;
 		}
 		else {
 			//guess was bad
@@ -85,13 +82,13 @@ var handlers = {
 	},
 	'GiveUp': function () {
 		this.response.speak("It's okay, your movie was " + MovieManager.MovieTitle());
-		delete this.attributes['movieData'];
+		this.attributes['movieData'] = undefined;
 		this.emit(':responseReady');
 	},
 	'GetHint': function () {
 		var hint = MovieManager.hint();
 		if (hint) {
-			this.response.speak("Here's another hint: " + hint).listen("Guess the Bond Movie or say 'I Give Up'");
+			this.response.speak("Here's another hint.: " + hint).listen("Guess the Bond Movie or say 'I Give Up'");
 		}
 		else {
 			this.response.speak("I'm all out of hints, guess the movie or say 'I give up'").listen("Guess the Bond Movie or say 'I Give Up'");
@@ -100,9 +97,11 @@ var handlers = {
 	},
 	'SessionEndedRequest': function () {
 		console.log('Session ended with reason: ' + this.event.request.reason);
+		this.attributes['movieData'] = undefined;
 	},
 	'AMAZON.StopIntent': function () {
 		this.response.speak('Bye');
+		this.attributes['movieData'] = undefined;
 		this.emit(':responseReady');
 	},
 	'AMAZON.HelpIntent': function () {
@@ -111,6 +110,7 @@ var handlers = {
 	},
 	'AMAZON.CancelIntent': function () {
 		this.response.speak('Bye');
+		this.attributes['movieData'] = undefined;
 		this.emit(':responseReady');
 	},
 	'Unhandled': function () {

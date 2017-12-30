@@ -1,4 +1,9 @@
 const Connery = "Sean Connery";
+const Lazenby = "George Lazenby";
+const Moore = "Roger Moore";
+const Dalton = "Timothy Dalton";
+const Brosnan = "Pierce Brosnan";
+const Craig = "Daniel Craig";
 
 const locales = "locales";
 const year = "year";
@@ -22,8 +27,9 @@ exports.hintTypes = {
 	gadgets
 }
 
+let id = 1;
 const DrNo = {
-	id : 1,
+	id : id++,
 	title : "Dr. No",
 	locales : "London and Jamaica",
 	bondActor : Connery,
@@ -39,9 +45,9 @@ const DrNo = {
 	]
 };
 const FromRussiaWithLove = {
-	id : 2,
+	id : id++,
 	title : "From Russia With Love",
-	locales : "Belgrade Istanbul and Venice",
+	locales : "Belgrade, Istanbul, and Venice",
 	bondActor : Connery,
 	actorsNth : 'second',
 	girlActress : "Daniela Bianchi",
@@ -49,7 +55,7 @@ const FromRussiaWithLove = {
 	sidekick : "Kerim Bey, who only employees his own sons",
 	gadgets : "Bond's signature Atache case with tear gas canisters and hidden gold sovereigns",
 	year : 1963,
-	henchmen : "Rosa Klebb with her knife-weilding shoe",
+	henchmen : "Rosa Klebb with her knife-wielding shoe",
 	allowedHints : [locales, year, actor, girl, gadgets, henchmen, sidekick],
 	factsForWinners : [
 		"From Russia with Love was Desmond Llewelyn's debut as Q, who he played for 36 years",
@@ -58,7 +64,7 @@ const FromRussiaWithLove = {
 	]
 };
 const Goldfinger = {
-	id : 3,
+	id : id++,
 	title : "GoldFinger",
 	locales : "Buckinghamshire, Miami Flordia, Fort Knok Kentucky, and Baltimore Maryland",
 	bondActor : Connery,
@@ -72,16 +78,288 @@ const Goldfinger = {
 	allowedHints : [locales, year, actor, girl, gadgets, henchmen, car],
 	factsForWinners : [
 		"Goldfinger actor spoke so little english that most of his lines had to be re-dubbed by someone else",
-		"Stunt pilots were given permission to fly near Fort Knox if they stayed above 3000, but were instructed by Guy Hamilton to fly closer to 500 feet which made the military go quote absolutely ape"
+		"Stunt pilots were given permission to fly near Fort Knox if they stayed above 3000 feet, but were instructed by Guy Hamilton to fly closer to 500 feet which made the military go quote, absolutely ape"
 	]
-}
-
+};
+const Thunderball = {
+	id : id++,
+	title : "Thunderball",
+	bondActor : Connery,
+	actorsNth : "fourth",
+	year : 1965,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const YouOnlyLiveTwice = {
+	id : id++,
+	title : "You Only Live Twice",
+	bondActor : Connery,
+	actorsNth : "fifth",
+	year : 1967,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const OnHerMajestysSecretService = {
+	id : id++,
+	title : "On Her Majesty's Secret Service",
+	bondActor : Lazenby,
+	actorsNth : "only",
+	year : 1969,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const DiamondsAreForever = {
+	id : id++,
+	title : "Diamonds Are Forever",
+	bondActor : Connery,
+	actorsNth : "last",
+	year : 1971,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const LiveAndLetDie = {
+	id : id++,
+	title : "Live and Let Die",
+	bondActor : Moore,
+	actorsNth : "fourth",
+	year : 1973,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const TheManWithTheGoldenGun = {
+	id : id++,
+	title : "The Man with the Golden Gun",
+	bondActor : Moore,
+	actorsNth : "second",
+	year : 1974,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const TheSpyWhoLovedMe = {
+	id : id++,
+	title : "The Spy who Loved Me",
+	bondActor : Moore,
+	actorsNth : "third",
+	year : 1977,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const Moonraker = {
+	id : id++,
+	title : "Moonraker",
+	bondActor : Moore,
+	actorsNth : "fourth",
+	year : 1979,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const ForYourEyesOnly = {
+	id : id++,
+	title : "For your Eyes Only",
+	bondActor : Moore,
+	actorsNth : "fifth",
+	year : 1981,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const Octopussy = {
+	id : id++,
+	title : "Octopussy",
+	bondActor : Moore,
+	actorsNth : "sixth",
+	year : 1983,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const AViewToAKill = {
+	id : id++,
+	title : "A View to a Kill",
+	bondActor : Moore,
+	actorsNth : "last",
+	year : 1985,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const TheLivingDaylights = {
+	id : id++,
+	title : "The Living Daylights",
+	bondActor : Dalton,
+	actorsNth : "first",
+	year : 1987,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const LicenceToKill = {
+	id : id++,
+	title : "Licence To Kill",
+	bondActor : Dalton,
+	actorsNth : "second and last",
+	year : 1989,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const GoldenEye = {
+	id : id++,
+	title : "GoldenEye",
+	bondActor : Brosnan,
+	actorsNth : "first",
+	year : 1995,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const TomorrowNeverDies = {
+	id : id++,
+	title : "Tomorrow Never Dies",
+	bondActor : Brosnan,
+	actorsNth : "second",
+	year : 1997,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const TheWorldIsNotEnough = {
+	id : id++,
+	title : "The World is not Enough",
+	bondActor : Brosnan,
+	actorsNth : "third",
+	year : 1999,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const DieAnotherDay = {
+	id : id++,
+	title : "Die Another Day",
+	bondActor : Brosnan,
+	actorsNth : "last",
+	year : 2002,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const CasinoRoyale = {
+	id : id++,
+	title : "Casino Royale",
+	bondActor : Craig,
+	actorsNth : "first",
+	year : 2006,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const QuantumOfSolace = {
+	id : id++,
+	title : "Quantum of Solace",
+	bondActor : Craig,
+	actorsNth : "second",
+	year : 2008,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const Skyfall = {
+	id : id++,
+	title : "Skyfall",
+	bondActor : Craig,
+	actorsNth : "third",
+	year : 2012,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
+const Spectre = {
+	id : id++,
+	title : "Spectre",
+	bondActor : Craig,
+	actorsNth : "last",
+	year : 2015,
+	allowedHints : [year],
+	factsForWinners : [
+		"Charliehasntfinishedthis",
+		"IllFillTthisInLater"
+	]
+};
 
 const Movies =
 [
 	DrNo,
 	FromRussiaWithLove,
-	Goldfinger
+	Goldfinger,
+	Thunderball,
+	YouOnlyLiveTwice,
+	OnHerMajestysSecretService,
+	DiamondsAreForever,
+	LiveAndLetDie,
+	TheManWithTheGoldenGun,
+	TheSpyWhoLovedMe,
+	Moonraker,
+	ForYourEyesOnly,
+	Octopussy,
+	AViewToAKill,
+	TheLivingDaylights,
+	LicenceToKill,
+	GoldenEye,
+	TomorrowNeverDies,
+	TheWorldIsNotEnough,
+	DieAnotherDay,
+	CasinoRoyale,
+	QuantumOfSolace,
+	Skyfall,
+	Spectre
 ]
 
 exports.Movies = Movies;

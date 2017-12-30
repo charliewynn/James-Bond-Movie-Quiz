@@ -13,8 +13,8 @@ exports.guess = function(id){
 		return [
 			true,
 			arrRandom([
-				"Great Work!",
-				"Nice Job"
+				"Great Work! ",
+				"Nice Job. "
 			]) + " " + arrRandom(Movies.ById(MovieID).factsForWinners)
 		];
 	}
@@ -22,9 +22,9 @@ exports.guess = function(id){
 	return [
 		false,
 		arrRandom([
-			"Sorry, try again",
-			"Whoops, that's not right",
-			"Nope, it's not " + badGuessName
+			"Sorry, try again. ",
+			"Whoops, that's not right. ",
+			"Nope, it's not " + badGuessName + ". "
 		])
 	];
 }
