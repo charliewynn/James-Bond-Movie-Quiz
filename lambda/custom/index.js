@@ -71,6 +71,7 @@ var handlers = {
 		else {
 			//guess was bad
 			var hint = MovieManager.hint();
+			//hint returns false if there aren't any more to give, otherwise it returns a a string
 			if (hint) {
 				this.response.speak(guessRes[1] + " Here's another hint: " + hint).listen("Guess again or say 'I give up'");
 			}
