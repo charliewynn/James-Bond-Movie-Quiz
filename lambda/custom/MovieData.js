@@ -88,10 +88,12 @@ const Thunderball = {
 	locales : "Château d'Anet France, Paradise Island Bahamas and Florida Coast off Miami",
 	actorsNth : "fourth",
 	year : 1965,
+	villian : "Emilio Largo",
+	villianActor : "Aldolfo Celi",
 	gadgets : "Homing pill and the Bell Rocket Belt jet pack",
 	bondGirl : "Domino Derval",
 	girlActress : "Claudine Auger",
-	allowedHints : [year, actor, girl, locales, gadgets],
+	allowedHints : [year, actor, girl, locales, gadgets, villian],
 	factsForWinners : [
 		"Stuntman Bill Cumming was paid a $450 bonus to jump into a shark infested pool during the filming of Thunderball",
 		"Adjusted for inflation, Thunderball is the highest grossing Bond film"
@@ -105,27 +107,13 @@ const YouOnlyLiveTwice = {
 	gadgets : "Mini-rocket Cigarette and an automatic safe cracker",
 	locales : "Hong Kong, Tokyo Japan, Northern Norway",
 	year : 1967,
+	sidekick : "Tiger Tanaka",
 	bondGirl : "Aki",
 	girlActress : "Akiko Wakabayashi",
-	allowedHints : [year, actor, girl, locales, gadgets],
+	allowedHints : [year, actor, girl, locales, gadgets, sidekick],
 	factsForWinners : [
 		"You Only Live Twice was written by Roald Dahl, author of Charlie and the Chocolate Factory",
 		"You only live twice is the only James bond movie where he doesn't drive a car"
-	]
-};
-const OnHerMajestysSecretService = {
-	id : id++,
-	title : "On Her Majesty's Secret Service",
-	bondActor : Lazenby,
-	actorsNth : "only",
-	locales : "Estoril Portugal, College of Arms London, and Piz Gloria Switzerland",
-	year : 1969,
-	bondGirl : "Teresa di Vicenzo",
-	girlActress : "Diana Rigg",
-	allowedHints : [year, actor, girl, locales],
-	factsForWinners : [
-		"On Her Majesty's Secret Service was the longest bond film until Casino Royale",
-		"An arrangement of the escape from Piz Gloria sequence was featured as a theme in the 2004 Pixar movie The Incredibles"
 	]
 };
 const DiamondsAreForever = {
@@ -133,14 +121,31 @@ const DiamondsAreForever = {
 	title : "Diamonds Are Forever",
 	bondActor : Connery,
 	actorsNth : "last",
+	henchmen : "Mr. Wint and Mr. Kidd",
 	locales : "Amsterdam, Las Vegas, Los Angeles, and Baja California",
 	year : 1971,
 	bondGirl : "Tiffany Case",
 	girlActress : "Jill Saint John",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, henchmen],
 	factsForWinners : [
 		"Diamonds are Forever originally had a cameo appearance by Sammy Davis Junior, but the scene was later cut",
 		"Filming was delayed for one scene in Las Vegas while Sean Connery went to collect slot machine winnings"
+	]
+};
+const OnHerMajestysSecretService = {
+	id : id++,
+	title : "On Her Majesty's Secret Service",
+	bondActor : Lazenby,
+	henchmen : "Fräulein Irma Bunt",
+	actorsNth : "only",
+	locales : "Estoril Portugal, College of Arms London, and Piz Gloria Switzerland",
+	year : 1969,
+	bondGirl : "Teresa di Vicenzo",
+	girlActress : "Diana Rigg",
+	allowedHints : [year, actor, girl, locales, henchmen],
+	factsForWinners : [
+		"On Her Majesty's Secret Service was the longest bond film until Casino Royale",
+		"An arrangement of the escape from Piz Gloria sequence was featured as a theme in the 2004 Pixar movie The Incredibles"
 	]
 };
 const LiveAndLetDie = {
@@ -149,10 +154,13 @@ const LiveAndLetDie = {
 	bondActor : Moore,
 	actorsNth : "fourth",
 	year : 1973,
+	henchmen : "Tee Hee Johnson",
+	villian : "Dr. Kananga a.k.a. Mr. Big",
+	villianActor : "Yaphet Kotto",
 	locales : "New York City, San Monique, and New Orleans",
 	bondGirl : "Solitaire",
 	girlActress : "Jane Seymour",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian, henchmen],
 	factsForWinners : [
 		"The speedboat jump scene unintentionally set the world record clearing 110 feet"
 	]
@@ -162,11 +170,14 @@ const TheManWithTheGoldenGun = {
 	title : "The Man with the Golden Gun",
 	bondActor : Moore,
 	actorsNth : "second",
+	henchmen : "Nick Nack",
 	locales : "Beirut, Hong Kong, Bangkok, and Ko Tapu Thailand",
+	villian : "Franscisco Scaramanga",
+	villianActor : "Christopher Lee",
 	year : 1974,
 	bondGirl : "Mary Goodnight",
 	girlActress : "Britt Ekland",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian, henchmen],
 	factsForWinners : [
 		"The corkscrew car jump in The Man with the Golden Gun was performed in one take",
 		"The man with the golden gun is the only bond film besides the first two which doesn't involve a helicopter at some point"
@@ -180,10 +191,13 @@ const TheSpyWhoLovedMe = {
 	bondActor : Moore,
 	actorsNth : "third",
 	year : 1977,
+	henchmen : "Jaws",
+	villian : "Karl Stromberg",
+	villianActor : "Curt Jürgens",
 	car : "Lotus Espirit S1",
 	bondGirl : "Anya Amasova, code name 'Triple X'",
 	girlActress : "Barbara Bach",
-	allowedHints : [year, actor, girl, car],
+	allowedHints : [year, actor, girl, car, villian, henchmen],
 	factsForWinners : [
 		"The actor for Jaws could only wear his metal teeth for about 30 seconds at a time"
 	]
@@ -195,9 +209,12 @@ const Moonraker = {
 	actorsNth : "fourth",
 	locales : "California, Venice Italy, Rio de Janeiro, and Outer Space",
 	year : 1979,
+	henchmen : "Jaws",
+	villian : "Hugo Drax",
+	villianActor : "Michael Lonsdale",
 	bondGirl : "Holly Goodhead",
 	girlActress : "Lois Chiles",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian, henchmen],
 	factsForWinners : [
 		"Ian Fleming originally intended Moonrake to become a movie even before he began writing the book",
 		"After receiving fan mail asking for Jaws to be a good guy, director Lewis Gilbert changed the ending so Jaws saves the day",
@@ -211,10 +228,12 @@ const ForYourEyesOnly = {
 	bondActor : Moore,
 	actorsNth : "fifth",
 	locales : "Madrid, St. Cyril's Greece, and Cortina d'Ampezzo Italy",
+	villian : "Aristotle Kristatos",
+	villianActor : "Julian Glover",
 	year : 1981,
 	bondGirl : "Melina Havelock",
 	girlActress : "Carole Bouquet",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian],
 	factsForWinners : [
 		"The monks who reside at the monastery protested to the filming, but the Greek Supreme Court ruled the outside of the monastery was local gonvernment property and availabel for filming",
 		"Roger Moore struggled to do the climbing scenes due to his fear of heights",
@@ -228,7 +247,10 @@ const Octopussy = {
 	actorsNth : "sixth",
 	locales : "Sotheby's London, Moscow, east and west Berlin, and Karl-Marx-Stadt Germany",
 	year : 1983,
-	allowedHints : [year, actor, locales],
+	sidekick : "Vijay",
+	villian : "Prince Kamal Khan",
+	villianActor : "Louis Jourdan",
+	allowedHints : [year, actor, locales, villian, sidekick],
 	factsForWinners : [
 		"Bonds ally Vijay was a real life prfessional tennis player",
 		"The Fabergé egg in the film is real, made in 1897 and called the Coronation Egg"
@@ -240,10 +262,14 @@ const AViewToAKill = {
 	bondActor : Moore,
 	actorsNth : "last",
 	year : 1985,
+	henchmen : "May Day",
+	sidekick : "Sir Godfrey Tibbett",
+	villian : "Max Zorin",
+	villianActor : "Christopher Walken",
 	locales : "Serbia, Paris, and San Francisco",
 	bondGirl : "Stacey Sutton",
 	girlActress : "Tanya Roberts",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian, sidekick, henchmen],
 	factsForWinners : [
 		"The airship in the film is show to take two minutes, in reality it would take up to 24 hours",
 		"A view to a kill was the first bond film with a premiere outside the U.K."
@@ -256,9 +282,13 @@ const TheLivingDaylights = {
 	actorsNth : "first",
 	locales : "Gibralter, Bratislava Czechoslovakia, Tangier, Vienna, and Pakistan",
 	year : 1987,
+	henchmen : "Necros",
+	sidekick : "Kamran Shah",
+	villian : "Brad Whitaker",
+	villianActor : "Joe Don Baker",
 	bondGirl : "Kara Milovy",
 	girlActress : "Maryam d'Abo",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian, sidekick, henchmen],
 	factsForWinners : [
 		"The macaw in the kitchen scene is the same bird featured in For your eyes only",
 		"In the book, Ian Fleming modeled the woman sniper after his half sister Amaryllis Fleming"
@@ -271,9 +301,13 @@ const LicenceToKill = {
 	actorsNth : "second and last",
 	locales : "Key West Florida, Bimini Islands, and Isthmus City",
 	year : 1989,
+	henchmen : "Milton Krest",
+	sidekick : "Sharkey",
+	villian : "Franz Sanchez",
+	villianActor : "Robert Davi",
 	bondGirl : "Pam Bouvier",
 	girlActress : "Carey Lowell",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian, sidekick, henchmen],
 	factsForWinners : [
 		"Licence to Kill is the first bond film which did not use the title of an Ian Fleming story",
 		"No part of Licence to kill was filmed in the U.K."
@@ -285,10 +319,13 @@ const GoldenEye = {
 	bondActor : Brosnan,
 	actorsNth : "first",
 	year : 1995,
+	henchmen : "Xenia Sergeyevna Onatopp",
+	villian : "Alec Trevelyan",
+	villianActor : "Sean Bean",
 	locales : "Soviet Union, Saint Petersburg, Monte Carlo, and Cuba",
 	bondGirl : "Natalya Simonova",
 	girlActress: "Izabella Scorupco",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian, henchmen],
 	factsForWinners : [
 		"Pierce Brosnan was the deadliest Bond, killing 47 people in GoldenEye",
 		"GoldenEye was what James Bond Author Ian Flemming called his Jamaican estate"
@@ -301,9 +338,11 @@ const TomorrowNeverDies = {
 	actorsNth : "second",
 	locales : "Russia, Hamburg Germany, South China Sea, and Ho Chi Minh City Vietnam",
 	year : 1997,
+	villian : "Elliot Carver",
+	villianActor : "Jonathan Pryce",
 	bondGirl : "Wai Lin",
 	girlActress : "Michelle Yeoh",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian],
 	factsForWinners : [
 		"Over 15 BMWs were destroyed in the filming of Tomorrow Never Dies",
 		"Tomorrow Never Dies opened the say day as Titanic"
@@ -316,9 +355,11 @@ const TheWorldIsNotEnough = {
 	actorsNth : "third",
 	locales : "Bilbao Spain, Baku Azerbaijan, Istanbul Turkey",
 	year : 1999,
+	villian: "Renard",
+	villianActor : "Ropert Carlyle",
 	bondGirl : "Dr. Christmas Jones",
 	girlActress : "Denise Richards",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian],
 	factsForWinners : [
 		"The World is not enough is the Bond family motto",
 		"The pre-title sequence in The World is not Enough is the longest for bond, at 14 minutes"
@@ -328,13 +369,16 @@ const DieAnotherDay = {
 	id : id++,
 	title : "Die Another Day",
 	bondActor : Brosnan,
+	henchmen : "Zao",
 	actorsNth : "last",
 	car : "Aston Martin V12 Vanquish",
 	locales : "DMZ Korean Peninsula, Hong Kong, Havana Cuba, and Iceland",
 	year : 2002,
+	villian : "Gustav Graves a.k.a. Colonel Moon",
+	villianActor : "Toby Stephens and Will Yun Lee",
 	bondGirl : "Jinx",
 	girlActress : "Halle Berry",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian, henchmen],
 	factsForWinners : [
 		"Halle Berry was injured during filming when debris from a smoke grenade flew into her eye",
 		"In early drafts of the script Bond's counterpart in Tomorrow never dies, Wai Lin, was to play the hotel manager in Hong Kong"
@@ -347,9 +391,12 @@ const CasinoRoyale = {
 	actorsNth : "first",
 	locales : "Mbale Uganda, Nassau Bahamas, Miami Florida, and Venice Italy",
 	year : 2006,
+	sidekick : "Strawberry Fields",
+	villian : "Le Chiffre",
+	villianActor : "Mads Mikkelsen",
 	bondGirl : "Vesper Lynd",
 	girlActress : "Eva Green",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian, sidekick],
 	factsForWinners : [
 		"The car barrel roll stunt near the end of Casino Royale broke the world record for most barrel rolls assisted by a cannon, seven complete rolls",
 		"Sony Pictures Entertainment traded the rights to Casino Royale in exchange for the rights to Spider-Man"
@@ -362,9 +409,12 @@ const QuantumOfSolace = {
 	actorsNth : "second",
 	locales : "London England, Port-au-Prince Haiti, La Paz Bolivia and Kazan Russia",
 	year : 2008,
+	henchmen : "General Medrano",
+	villian : "Dominic Greene",
+	villianActor : "Mathieu Amalric",
 	bondGirl : "Camille Montes",
 	girlActress : "Olga Kurylenko",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian, henchmen],
 	factsForWinners : [
 		"Quantum of Solace is the shortest bond film in the series at one hour and thirty six minutes",
 		"Bond Actor Daniel Craig helped with the script writing, which was interupted due to a writers strike"
@@ -377,9 +427,11 @@ const Skyfall = {
 	actorsNth : "third",
 	locales : "Istanbul, London, Shanghai, and Macau",
 	year : 2012,
+	villian : "Raoul Silva",
+	villianActor : "Javier Bardem",
 	bondGirl : "Sévérine",
 	girlActress : "Bérénice Marlohe",
-	allowedHints : [year, actor, girl, locales],
+	allowedHints : [year, actor, girl, locales, villian],
 	factsForWinners : [
 		"Skyfall's cast went through two hundred rounds of ammunition while undergoing training",
 		"Skyfall is the first bond film to gross over one billion dollars worldwide"
@@ -396,7 +448,7 @@ const Spectre = {
 	girlActress : "Léa Seydoux",
 	allowedHints : [year, actor, girl, locales],
 	factsForWinners : [
-		"Spectre's car expenses totalled 48 million dollars, smashing a record sever Aston Martins",
+		"Spectre's car expenses totalled 48 million dollars, smashing a record seven Aston Martins",
 		"The organization, Spectre, was off limits for bond films following a 1961 legal dispute. After the owner to the rights of Spectre died in 2006 M.G.M. was able to buy back the rights from his estate"
 	]
 };

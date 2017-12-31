@@ -62,8 +62,8 @@ exports.hint = function(){
 			]);
 		case Movies.hintTypes.villian:
 			return arrRandom([
-				"Bond's main adversary in the film was " + Movie.villian,
-				"Bond faced off with " + Movie.villian
+				"Bond's main adversary in the film was " + Movie.villian + " played by " + Movie.villianActor,
+				"Bond faced off with " + Movie.villian + " portrayed by " + Movie.villianActor
 			]);
 		case Movies.hintTypes.henchmen:
 			return arrRandom([
