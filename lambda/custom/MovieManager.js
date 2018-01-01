@@ -1,15 +1,61 @@
+//
+//save the last hint, if they get in wrong, and the one they guessed has that hint:
+//tell them what the one they guessed hint was:
+
+//your hint is: it came out in 1962
+//> goldfinger?
+//no, goldfinger came out in 1965
+//maybe only for year and actor?
+
+//only let one of each movie per launch, then keep "score"
+//100 points for 1 hint
+//50 for two
+//25 for three
+//...
+//max score would be 100*Movies.length 
+
 const Movies = require("./MovieData");
 let MovieID = arrRandom(Movies.Movies).id;
 let Guesses = []; //ids of guessed movies
 let HintsUsed = [];
+let MoviesDone = [];
+let score = 0;
 
+
+exports.CurrentScore = function(){
+	const perfect = Movies.Movies.length * 100;
+	const gamePerfect = MoviesDone.length * 100 || 100;
+	const roundsOrRound = MoviesDone.length == 1 ? " round" : " rounds";
+	console.log('perfect',perfect, gamePerfect, score);
+	score = Math.round(score);
+	if(score == gamePerfect){
+		return "You played for " + MoviesDone.length + roundsOrRound + " and so far have a perfect score of " + score + ". Play to the end and try to get " + perfect;
+	}
+	return "You played for " + MoviesDone.length + roundsOrRound + " and so far have a score of " + score + " out of " + gamePerfect + ". Keep playing to go higher, a full perfect game will score " + perfect;
+}
+
+exports.Score = function(){
+	const perfect = Movies.Movies.length * 100;
+	const gamePerfect = MoviesDone.length * 100 || 100;
+	const roundsOrRound = MoviesDone.length == 1 ? " round" : " rounds";
+	console.log('perfect',perfect, gamePerfect, score);
+	score = Math.round(score);
+	if(score == perfect)
+		return "You scored " + score + ", a perfect score!";
+	if(score == gamePerfect){
+		return "You played for " + MoviesDone.length + roundsOrRound + " and got a perfect score. But you only scored " + score + " out of " + perfect + ", which is  a full perfect score";
+	}
+	return "You scored " + score + " out of " + (MoviesDone.length * 100) + " for playing " + MoviesDone.length + roundsOrRound + ". A perfect score would be " + perfect + " if you played all rounds.";
+}
 exports.guess = function(id){
-	if(id === -1) return [false, "That's not technically a James Bond Movie, so I'll never have you try to guess it, try again.."];
 	if(Guesses.indexOf(id) > -1)
 		return [false, "You already Guessed that!"];
 	Guesses.push(id);
 	if(MovieID === id) {
 		//if they get it right, return a random fact about the movie
+		const scoreAdd = 100/(HintsUsed.length || 1);
+		console.log("Adding to score, oldscore", scoreAdd, score);
+		score += scoreAdd;
 		return [
 			true,
 			arrRandom([
@@ -29,15 +75,32 @@ exports.guess = function(id){
 	];
 }
 
+exports.wipe = function(){
+	MoviesDone = [];
+	score = 0;
+}
 exports.NewGame = function(lastid){
 
-	MovieID = arrRandom(Movies.Movies).id;
+	if(lastid)
+		MoviesDone.push(lastid);
+
+	const allowedMovieIds = Movies.Movies.map(m=>m.id).filter(m=>MoviesDone.indexOf(m) === -1);
+
+	console.log("AllowedMovieIds", allowedMovieIds);
+	if(allowedMovieIds.length == 0){
+		return false;
+	}
+	//MovieID = arrRandom(Movies.Movies).id;
+	MovieID = arrRandom(allowedMovieIds);
+	/*
 	while(lastid == MovieID){
 		MovieID = arrRandom(Movies.Movies).id;
 	}
+	*/
 
 	Guesses = []; //ids of guessed movies
 	HintsUsed = [];
+	return true;
 }
 
 exports.MovieTitle = function(){

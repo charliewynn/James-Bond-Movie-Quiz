@@ -1,3 +1,4 @@
 LaunchRequest
-GuessIntent film=2
-GuessIntent film=1
+GuessIntent film=Dr. No
+GuessIntent film=From Russia with Love
+AMAZON.StopIntent

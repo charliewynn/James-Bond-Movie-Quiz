@@ -27,9 +27,8 @@ exports.hintTypes = {
 	gadgets
 }
 
-let id = 1;
 const DrNo = {
-	id : id++,
+	id : 1,
 	title : "Dr. No",
 	locales : "London and Jamaica",
 	bondActor : Connery,
@@ -45,14 +44,14 @@ const DrNo = {
 	]
 };
 const FromRussiaWithLove = {
-	id : id++,
+	id : 2,
 	title : "From Russia With Love",
 	locales : "Belgrade, Istanbul, and Venice",
 	bondActor : Connery,
 	actorsNth : 'second',
 	girlActress : "Daniela Bianchi",
 	bondGirl : "Tatiana Romanova",
-	sidekick : "Kerim Bey, who only employees his own sons",
+	sidekick : "Kerim Bey, who only employs his own sons",
 	gadgets : "Bond's signature Atache case with tear gas canisters and hidden gold sovereigns",
 	year : 1963,
 	henchmen : "Rosa Klebb with her knife-wielding shoe",
@@ -64,7 +63,7 @@ const FromRussiaWithLove = {
 	]
 };
 const Goldfinger = {
-	id : id++,
+	id : 3,
 	title : "GoldFinger",
 	locales : "Buckinghamshire, Miami Florida, Fort Knok Kentucky, and Baltimore Maryland",
 	bondActor : Connery,
@@ -82,7 +81,7 @@ const Goldfinger = {
 	]
 };
 const Thunderball = {
-	id : id++,
+	id : 4,
 	title : "Thunderball",
 	bondActor : Connery,
 	locales : "Château d'Anet France, Paradise Island Bahamas and Florida Coast off Miami",
@@ -100,7 +99,7 @@ const Thunderball = {
 	]
 };
 const YouOnlyLiveTwice = {
-	id : id++,
+	id : 5,
 	title : "You Only Live Twice",
 	bondActor : Connery,
 	actorsNth : "fifth",
@@ -116,24 +115,8 @@ const YouOnlyLiveTwice = {
 		"You only live twice is the only James bond movie where he doesn't drive a car"
 	]
 };
-const DiamondsAreForever = {
-	id : id++,
-	title : "Diamonds Are Forever",
-	bondActor : Connery,
-	actorsNth : "last",
-	henchmen : "Mr. Wint and Mr. Kidd",
-	locales : "Amsterdam, Las Vegas, Los Angeles, and Baja California",
-	year : 1971,
-	bondGirl : "Tiffany Case",
-	girlActress : "Jill Saint John",
-	allowedHints : [year, actor, girl, locales, henchmen],
-	factsForWinners : [
-		"Diamonds are Forever originally had a cameo appearance by Sammy Davis Junior, but the scene was later cut",
-		"Filming was delayed for one scene in Las Vegas while Sean Connery went to collect slot machine winnings"
-	]
-};
 const OnHerMajestysSecretService = {
-	id : id++,
+	id : 6,
 	title : "On Her Majesty's Secret Service",
 	bondActor : Lazenby,
 	henchmen : "Fräulein Irma Bunt",
@@ -148,8 +131,24 @@ const OnHerMajestysSecretService = {
 		"An arrangement of the escape from Piz Gloria sequence was featured as a theme in the 2004 Pixar movie The Incredibles"
 	]
 };
+const DiamondsAreForever = {
+	id : 7,
+	title : "Diamonds Are Forever",
+	bondActor : Connery,
+	actorsNth : "last",
+	henchmen : "Mr. Wint and Mr. Kidd",
+	locales : "Amsterdam, Las Vegas, Los Angeles, and Baja California",
+	year : 1971,
+	bondGirl : "Tiffany Case",
+	girlActress : "Jill Saint John",
+	allowedHints : [year, actor, girl, locales, henchmen],
+	factsForWinners : [
+		"Diamonds are Forever originally had a cameo appearance by Sammy Davis Junior, but the scene was later cut",
+		"Filming was delayed for one scene in Las Vegas while Sean Connery went to collect slot machine winnings"
+	]
+};
 const LiveAndLetDie = {
-	id : id++,
+	id : 8,
 	title : "Live and Let Die",
 	bondActor : Moore,
 	actorsNth : "fourth",
@@ -166,7 +165,7 @@ const LiveAndLetDie = {
 	]
 };
 const TheManWithTheGoldenGun = {
-	id : id++,
+	id : 9,
 	title : "The Man with the Golden Gun",
 	bondActor : Moore,
 	actorsNth : "second",
@@ -186,12 +185,12 @@ const TheManWithTheGoldenGun = {
 
 //the locales are boring so I'm leaving them out
 const TheSpyWhoLovedMe = {
-	id : id++,
+	id : 10,
 	title : "The Spy who Loved Me",
 	bondActor : Moore,
 	actorsNth : "third",
 	year : 1977,
-	henchmen : "Jaws",
+	henchmen : "Jaws, in his first appearance,",
 	villian : "Karl Stromberg",
 	villianActor : "Curt Jürgens",
 	car : "Lotus Espirit S1",
@@ -203,27 +202,27 @@ const TheSpyWhoLovedMe = {
 	]
 };
 const Moonraker = {
-	id : id++,
+	id : 11,
 	title : "Moonraker",
 	bondActor : Moore,
 	actorsNth : "fourth",
 	locales : "California, Venice Italy, Rio de Janeiro, and Outer Space",
 	year : 1979,
-	henchmen : "Jaws",
+	henchmen : "Jaws, in his second appearance,",
 	villian : "Hugo Drax",
 	villianActor : "Michael Lonsdale",
 	bondGirl : "Holly Goodhead",
 	girlActress : "Lois Chiles",
 	allowedHints : [year, actor, girl, locales, villian, henchmen],
 	factsForWinners : [
-		"Ian Fleming originally intended Moonrake to become a movie even before he began writing the book",
+		"Ian Fleming originally intended Moonraker to become a movie even before he began writing the book",
 		"After receiving fan mail asking for Jaws to be a good guy, director Lewis Gilbert changed the ending so Jaws saves the day",
 		"The laser battle on the space station holds the world record for most number of zero gravity wires in one scene",
 		"Bond is never seen holding a pistol during Moonraker"
 	]
 };
 const ForYourEyesOnly = {
-	id : id++,
+	id : 12,
 	title : "For your Eyes Only",
 	bondActor : Moore,
 	actorsNth : "fifth",
@@ -241,7 +240,7 @@ const ForYourEyesOnly = {
 	]
 };
 const Octopussy = {
-	id : id++,
+	id : 13,
 	title : "Octopussy",
 	bondActor : Moore,
 	actorsNth : "sixth",
@@ -257,7 +256,7 @@ const Octopussy = {
 	]
 };
 const AViewToAKill = {
-	id : id++,
+	id : 14,
 	title : "A View to a Kill",
 	bondActor : Moore,
 	actorsNth : "last",
@@ -276,7 +275,7 @@ const AViewToAKill = {
 	]
 };
 const TheLivingDaylights = {
-	id : id++,
+	id : 15,
 	title : "The Living Daylights",
 	bondActor : Dalton,
 	actorsNth : "first",
@@ -295,7 +294,7 @@ const TheLivingDaylights = {
 	]
 };
 const LicenceToKill = {
-	id : id++,
+	id : 16,
 	title : "Licence To Kill",
 	bondActor : Dalton,
 	actorsNth : "second and last",
@@ -314,7 +313,7 @@ const LicenceToKill = {
 	]
 };
 const GoldenEye = {
-	id : id++,
+	id : 17,
 	title : "GoldenEye",
 	bondActor : Brosnan,
 	actorsNth : "first",
@@ -332,7 +331,7 @@ const GoldenEye = {
 	]
 };
 const TomorrowNeverDies = {
-	id : id++,
+	id : 18,
 	title : "Tomorrow Never Dies",
 	bondActor : Brosnan,
 	actorsNth : "second",
@@ -349,11 +348,11 @@ const TomorrowNeverDies = {
 	]
 };
 const TheWorldIsNotEnough = {
-	id : id++,
+	id : 19,
 	title : "The World is not Enough",
 	bondActor : Brosnan,
 	actorsNth : "third",
-	locales : "Bilbao Spain, Baku Azerbaijan, Istanbul Turkey",
+	locales : "Bilbao Spain, Azerbaijan, Istanbul Turkey",
 	year : 1999,
 	villian: "Renard",
 	villianActor : "Ropert Carlyle",
@@ -366,7 +365,7 @@ const TheWorldIsNotEnough = {
 	]
 };
 const DieAnotherDay = {
-	id : id++,
+	id : 20,
 	title : "Die Another Day",
 	bondActor : Brosnan,
 	henchmen : "Zao",
@@ -385,43 +384,43 @@ const DieAnotherDay = {
 	]
 };
 const CasinoRoyale = {
-	id : id++,
+	id : 21,
 	title : "Casino Royale",
 	bondActor : Craig,
 	actorsNth : "first",
 	locales : "Mbale Uganda, Nassau Bahamas, Miami Florida, and Venice Italy",
 	year : 2006,
-	sidekick : "Strawberry Fields",
 	villian : "Le Chiffre",
 	villianActor : "Mads Mikkelsen",
 	bondGirl : "Vesper Lynd",
 	girlActress : "Eva Green",
-	allowedHints : [year, actor, girl, locales, villian, sidekick],
+	allowedHints : [year, actor, girl, locales, villian],
 	factsForWinners : [
 		"The car barrel roll stunt near the end of Casino Royale broke the world record for most barrel rolls assisted by a cannon, seven complete rolls",
 		"Sony Pictures Entertainment traded the rights to Casino Royale in exchange for the rights to Spider-Man"
 	]
 };
 const QuantumOfSolace = {
-	id : id++,
+	id : 22,
 	title : "Quantum of Solace",
 	bondActor : Craig,
 	actorsNth : "second",
 	locales : "London England, Port-au-Prince Haiti, La Paz Bolivia and Kazan Russia",
 	year : 2008,
+	sidekick : "Strawberry Fields",
 	henchmen : "General Medrano",
 	villian : "Dominic Greene",
 	villianActor : "Mathieu Amalric",
 	bondGirl : "Camille Montes",
 	girlActress : "Olga Kurylenko",
-	allowedHints : [year, actor, girl, locales, villian, henchmen],
+	allowedHints : [year, actor, girl, locales, villian, henchmen, sidekick],
 	factsForWinners : [
 		"Quantum of Solace is the shortest bond film in the series at one hour and thirty six minutes",
 		"Bond Actor Daniel Craig helped with the script writing, which was interupted due to a writers strike"
 	]
 };
 const Skyfall = {
-	id : id++,
+	id : 23,
 	title : "Skyfall",
 	bondActor : Craig,
 	actorsNth : "third",
@@ -438,7 +437,7 @@ const Skyfall = {
 	]
 };
 const Spectre = {
-	id : id++,
+	id : 24,
 	title : "Spectre",
 	bondActor : Craig,
 	actorsNth : "last",
@@ -457,6 +456,8 @@ const Movies =
 [
 	DrNo,
 	FromRussiaWithLove,
+//];//,
+//const oldMovies = [
 	Goldfinger,
 	Thunderball,
 	YouOnlyLiveTwice,

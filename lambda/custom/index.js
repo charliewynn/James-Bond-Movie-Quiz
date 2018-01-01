@@ -12,6 +12,11 @@ exports.handler = function (event, context) {
 var handlers = {
 	'LaunchRequest': function () {
 		console.log("Start Intent");
+		MovieManager.wipe();
+		this.emit("BeginGame");
+	},
+	'StartOverIntent' : function(){
+		MovieManager.wipe();
 		this.emit("BeginGame");
 	},
 	'NewGameIntent': function () {
@@ -21,6 +26,9 @@ var handlers = {
 		console.log("Start Guess Intent");
 		this.emit("DoGuess");
 	},
+	'ScoreIntent' : function(){
+		this.emit("GetScore");
+	},
 	'HintIntent': function () {
 		this.emit("GetHint");
 	},
@@ -28,7 +36,12 @@ var handlers = {
 		this.emit("GiveUp");
 	},
 	'BeginGame': function () {
-		MovieManager.NewGame(this.attributes['lastID']);
+		if(!MovieManager.NewGame(this.attributes['lastID'])){
+			//they played all movies, and they're done
+			this.response.speak("That's all of the Bond Movies, " + MovieManager.Score());
+			this.emit(":responseReady");
+			return;
+		}
 		var hint = MovieManager.hint();
 		var data = MovieManager.export();
 
@@ -63,21 +76,34 @@ var handlers = {
 		var theirGuess = slotdata.id;
 		if (theirGuess != parseInt(theirGuess)) {
 			console.log("They guessed a non number");
-			this.response.speak("I didn't understand your guess (" + theirGuess + "), please guess a James Bond Movie");
+			this.response.speak("I didn't understand your guess (" + theirGuess + "), please guess a James Bond Movie").listen("Ask for another hint or say 'I Give Up'");
 			this.emit(":responseReady");
 			return;
 		}
 		theirGuess = parseInt(theirGuess);
+		if(theirGuess === -1) {
+			console.log("They guessed NSNA");
+			this.response.speak("While that's a film with a character named James Bond, this game is only quizzing you on EON Productions James Bond Films.")
+			.listen("Ask for another hint or say 'I Give Up'");
+			this.emit(":responseReady");
+			return;
+		}
 		var guessRes = MovieManager.guess(theirGuess);
 		if (guessRes[0]) {
-			MovieManager.NewGame(this.attributes['lastID']);
+
+			if(!MovieManager.NewGame(this.attributes['lastID'])){
+				//they played all movies, and they're done
+				this.response.speak("great!, " + guessRes[1] + ". That's all of the Bond Movies, " + MovieManager.Score());
+				this.emit(":responseReady");
+				return;
+			}
 			var hint = MovieManager.hint();
 			var data = MovieManager.export();
 
 			this.attributes['movieData'] = data;
 			this.attributes['lastID'] = data.MovieID;
 			console.log("Saving Attrs", this.attributes);
-			this.response.speak(guessRes[1] + ". Alright, I've thought of another Bond Movie.. Your first hint is: " +
+			this.response.speak(guessRes[1] + ". Let's try another one.. Your first hint is: " +
 				hint).listen("Guess a Bond Movie, or say 'Give me another hint'");
 			this.emit(":responseReady");
 		}
@@ -91,12 +117,20 @@ var handlers = {
 			else {
 				this.response.speak(guessRes[1] + " I'm all out of hints, guess another movie or say 'I give up'").listen("Guess again or say 'I give up'");
 			}
+			var data = MovieManager.export();
+
+			this.attributes['movieData'] = data;
 		}
 		this.emit(":responseReady");
 	},
 	'GiveUp': function () {
 		const themovietheylost = MovieManager.MovieTitle(); 
-		MovieManager.NewGame(this.attributes['lastID']);
+		if(!MovieManager.NewGame(this.attributes['lastID'])){
+			//they played all movies, and they're done
+			this.response.speak("That's all of the Bond Movies, " + MovieManager.Score());
+			this.emit(":responseReady");
+			return;
+		}
 		var hint = MovieManager.hint();
 		var data = MovieManager.export();
 
@@ -117,24 +151,33 @@ var handlers = {
 		else {
 			this.response.speak("I'm all out of hints, guess the movie or say 'I give up'").listen("Guess the Bond Movie or say 'I Give Up'");
 		}
+		var data = MovieManager.export();
+
+		this.attributes['movieData'] = data;
 		this.emit(':responseReady');
+	},
+	'GetScore' : function(){
+		console.log("they want their current score");
+		const currScore = MovieManager.CurrentScore();
+		this.response.speak(currScore).listen("Keep playing or say 'stop'");
+		this.emit(":responseReady");
 	},
 	'SessionEndedRequest': function () {
 		console.log('Session ended with reason: ' + this.event.request.reason);
 		this.attributes['movieData'] = undefined;
 	},
 	'AMAZON.StopIntent': function () {
-		this.response.speak('Thanks for playing');
+		this.response.speak('Thanks for playing, ' + MovieManager.Score());
 		this.attributes['movieData'] = undefined;
 		this.emit(':responseReady');
 	},
 	'AMAZON.HelpIntent': function () {
-		this.response.speak("say 'alexa, start James Bond Movie Quiz' to start a game, if you need a hint, say 'I need a hint'")
+		this.response.speak("say 'alexa, start James Bond Movie Quiz' to start a game, if you need a hint, say 'I need a hint'. If you can't figure out a movie, say 'I give up'. Say Stop to quit and learn your score")
 			.listen("Say I need a hint, or I give up");
 		this.emit(':responseReady');
 	},
 	'AMAZON.CancelIntent': function () {
-		this.response.speak('Thanks for playing');
+		this.response.speak('Thanks for playing, ' + MovieManager.Score());
 		this.attributes['movieData'] = undefined;
 		this.emit(':responseReady');
 	},

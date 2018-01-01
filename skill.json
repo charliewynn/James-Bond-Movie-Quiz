@@ -16,7 +16,7 @@
 					"smallIconUri": "https://raw.githubusercontent.com/charliewynn/James-Bond-Movie-Quiz/master/bond108.png",
 					"largeIconUri": "https://raw.githubusercontent.com/charliewynn/James-Bond-Movie-Quiz/master/bond512.png",
 					"name": "James Bond Movie Quiz",
-					"description": "Alexa gives you hints about a James Bond movie until you can guess it"
+					"description": "Alexa gives you hints about a James Bond movie until you can guess it. Play until you can guess all Eon Productions films. Say \"What's my score\" to see how you're doing. Say \"stop\" to quit mid-game and get your score, or play to the end to try for a perfect score."
 				}
 			},
 			"isAvailableWorldwide": true,

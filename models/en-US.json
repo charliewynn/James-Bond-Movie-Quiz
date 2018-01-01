@@ -5,6 +5,12 @@
 				{
 					"name": "JamesBondFilms",
 					"values": [
+						{
+							"id": "-1", "name": {"value":"invalid",
+							"synonyms": [
+								"Never say never again"
+							]}
+						},
 						{ "id": "1", "name": { "value": "Dr. No", "synonyms": []
 							}
 						},
@@ -102,6 +108,24 @@
 				{
 					"name": "AMAZON.StopIntent",
 					"samples": []
+				},
+				{
+					"name":"StartOverIntent",
+					"samples": [
+						"new game",
+						"start over"
+					],
+					"slots" :[]
+				},
+				{
+					"name":"ScoreIntent",
+					"samples": [
+						"What's my score",
+						"Tell me my score",
+						"what's my current score",
+						"tell me my current score",
+						"how am I doing"
+					]
 				},
 				{
 					"name": "GiveUpIntent",
