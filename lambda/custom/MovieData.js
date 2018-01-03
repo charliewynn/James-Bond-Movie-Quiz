@@ -270,7 +270,7 @@ const AViewToAKill = {
 	girlActress : "Tanya Roberts",
 	allowedHints : [year, actor, girl, locales, villian, sidekick, henchmen],
 	factsForWinners : [
-		"The airship in the film is show to take two minutes, in reality it would take up to 24 hours",
+		"The airship in the film is show to take two minutes to inflate, in reality it would take up to 24 hours",
 		"A view to a kill was the first bond film with a premiere outside the U.K."
 	]
 };
