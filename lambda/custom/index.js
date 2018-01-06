@@ -1,7 +1,7 @@
 'use strict';
 var Alexa = require("alexa-sdk");
 var MovieManager = require("./MovieManager");
-
+console.log("Loading v1.1");
 exports.handler = function (event, context) {
 	var alexa = Alexa.handler(event, context);
 	alexa.appId = "amzn1.ask.skill.0a690982-03a0-4092-9033-88504b84245a";
@@ -91,9 +91,10 @@ var handlers = {
 		var guessRes = MovieManager.guess(theirGuess);
 		if (guessRes[0]) {
 
+			console.log("They guessed right");
 			if(!MovieManager.NewGame(this.attributes['lastID'])){
 				//they played all movies, and they're done
-				this.response.speak("great!, " + guessRes[1] + ". That's all of the Bond Movies, " + MovieManager.Score());
+				this.response.speak(guessRes[1] + ". That's all of the Bond Movies, " + MovieManager.Score());
 				this.emit(":responseReady");
 				return;
 			}
@@ -102,12 +103,21 @@ var handlers = {
 
 			this.attributes['movieData'] = data;
 			this.attributes['lastID'] = data.MovieID;
-			console.log("Saving Attrs", this.attributes);
-			this.response.speak(guessRes[1] + ". Let's try another one.. Your first hint is: " +
+			console.log("Saving Attrs good guess", this.attributes);
+
+			const intro = arrRandom([
+				"Let's try another one. ",
+				"Here's your next one. ",
+				"Ready for the next one? ",
+				"Doing great so far, here's the next one. ",
+				"Let's keep going. "
+			]);
+			this.response.speak(guessRes[1] + ". " + intro + " Your first hint is: " +
 				hint).listen("Guess a Bond Movie, or say 'Give me another hint'");
 			this.emit(":responseReady");
 		}
 		else {
+			console.log("The guessed wrong", theirGuess);
 			//guess was bad
 			var hint = MovieManager.hint();
 			//hint returns false if there aren't any more to give, otherwise it returns a a string
@@ -120,6 +130,7 @@ var handlers = {
 			var data = MovieManager.export();
 
 			this.attributes['movieData'] = data;
+			console.log("Saving Attrs bad guess", this.attributes);
 		}
 		this.emit(":responseReady");
 	},
@@ -232,4 +243,8 @@ function getSlotValues(filledSlots) {
 	}, this);
 	//console.log("slot values: "+JSON.stringify(slotValues));
 	return slotValues;
+}
+
+function arrRandom(arr){
+	return arr[Math.floor(Math.random()*arr.length)];
 }

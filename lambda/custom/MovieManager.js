@@ -13,7 +13,7 @@
 //25 for three
 //...
 //max score would be 100*Movies.length 
-
+console.log("Loading New Game");
 const Movies = require("./MovieData");
 let MovieID = arrRandom(Movies.Movies).id;
 let Guesses = []; //ids of guessed movies
@@ -45,7 +45,12 @@ exports.Score = function(){
 	if(score == gamePerfect){
 		return "You played for " + MoviesDone.length + roundsOrRound + " and got a perfect score. But you only scored " + score + " out of " + perfect + ", which is  a full perfect score";
 	}
-	return "You scored " + score + " out of " + (MoviesDone.length * 100) + " for playing " + MoviesDone.length + roundsOrRound + ". A perfect score would be " + perfect + " if you played all rounds.";
+	if(MoviesDone.length == Movies.Movies.length){
+		return "You scored " + score + " out of " + (MoviesDone.length * 100) + " for playing ill " + MoviesDone.length + roundsOrRound;
+	}
+	else {
+		return "You scored " + score + " out of " + (MoviesDone.length * 100) + " for playing " + MoviesDone.length + roundsOrRound + ". A perfect score would be " + perfect + " if you played all rounds.";
+	}
 }
 exports.guess = function(id){
 	if(Guesses.indexOf(id) > -1)
@@ -59,6 +64,8 @@ exports.guess = function(id){
 		return [
 			true,
 			arrRandom([
+				"Perfect! ",
+				"You got it! ",
 				"Great Work! ",
 				"Nice Job. "
 			]) + " " + arrRandom(Movies.ById(MovieID).factsForWinners)
@@ -76,6 +83,7 @@ exports.guess = function(id){
 }
 
 exports.wipe = function(){
+	console.log("Wiping Game");
 	MoviesDone = [];
 	score = 0;
 }
@@ -172,13 +180,15 @@ exports.continue = function(data){
 	MovieID = data.MovieID;
 	Guesses = data.Guesses;
 	HintsUsed = data.HintsUsed;
+	MoviesDone = data.MoviesDone;
 }
 
 exports.export = function(){
 	return {
 		MovieID : MovieID,
 		Guesses : Guesses,
-		HintsUsed : HintsUsed
+		HintsUsed : HintsUsed,
+		MoviesDone : MoviesDone
 	}
 }
 

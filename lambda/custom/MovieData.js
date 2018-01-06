@@ -234,7 +234,7 @@ const ForYourEyesOnly = {
 	girlActress : "Carole Bouquet",
 	allowedHints : [year, actor, girl, locales, villian],
 	factsForWinners : [
-		"The monks who reside at the monastery protested to the filming, but the Greek Supreme Court ruled the outside of the monastery was local gonvernment property and availabel for filming",
+		"The monks who reside at the monastery protested to the filming, but the Greek Supreme Court ruled the outside of the monastery was local gonvernment property and available for filming",
 		"Roger Moore struggled to do the climbing scenes due to his fear of heights",
 		"On the final day of filming the bobsleigh chase one of the stuntmen was killed after becoming trapped under the sled"
 	]
