@@ -46,7 +46,7 @@ exports.Score = function(){
 		return "You played for " + MoviesDone.length + roundsOrRound + " and got a perfect score. But you only scored " + score + " out of " + perfect + ", which is  a full perfect score";
 	}
 	if(MoviesDone.length == Movies.Movies.length){
-		return "You scored " + score + " out of " + (MoviesDone.length * 100) + " for playing ill " + MoviesDone.length + roundsOrRound;
+		return "You scored " + score + " out of " + (MoviesDone.length * 100) + " for playing all " + MoviesDone.length + roundsOrRound;
 	}
 	else {
 		return "You scored " + score + " out of " + (MoviesDone.length * 100) + " for playing " + MoviesDone.length + roundsOrRound + ". A perfect score would be " + perfect + " if you played all rounds.";

@@ -151,7 +151,7 @@ const LiveAndLetDie = {
 	id : 8,
 	title : "Live and Let Die",
 	bondActor : Moore,
-	actorsNth : "fourth",
+	actorsNth : "first",
 	year : 1973,
 	henchmen : "Tee Hee Johnson",
 	villian : "Dr. Kananga a.k.a. Mr. Big",
@@ -201,6 +201,7 @@ const TheSpyWhoLovedMe = {
 		"The actor for Jaws could only wear his metal teeth for about 30 seconds at a time"
 	]
 };
+
 const Moonraker = {
 	id : 11,
 	title : "Moonraker",
@@ -259,7 +260,7 @@ const AViewToAKill = {
 	id : 14,
 	title : "A View to a Kill",
 	bondActor : Moore,
-	actorsNth : "last",
+	actorsNth : "seventh and last",
 	year : 1985,
 	henchmen : "May Day",
 	sidekick : "Sir Godfrey Tibbett",
