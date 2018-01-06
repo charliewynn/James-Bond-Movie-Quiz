@@ -441,7 +441,7 @@ const Spectre = {
 	id : 24,
 	title : "Spectre",
 	bondActor : Craig,
-	actorsNth : "last",
+	actorsNth : "fourth",
 	locales : "Mexico City, London, Saint Peters Square, Rome, Austria, and Tangier Morocco",
 	year : 2015,
 	bondGirl : "Dr. Madeleine Swann",
@@ -453,12 +453,26 @@ const Spectre = {
 	]
 };
 
+const Bond25 = {
+	id : 25,
+	title : "idk",
+	bondActor : Craig,
+	actorsNth : "last",
+	locales : "pretty cool places probably",
+	year : "2019",
+	bondGirl : "Some lady character",
+	girlActress : "Some Actress",
+	allowedHints : [year, actor],
+	factsForWinners : [
+		"cool fact 1",
+		"cool fact 2"
+	]
+}
+
 const Movies =
 [
 	DrNo,
 	FromRussiaWithLove,
-//];//,
-//const oldMovies = [
 	Goldfinger,
 	Thunderball,
 	YouOnlyLiveTwice,
