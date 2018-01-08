@@ -181,6 +181,7 @@ exports.continue = function(data){
 	Guesses = data.Guesses;
 	HintsUsed = data.HintsUsed;
 	MoviesDone = data.MoviesDone;
+	score = data.score;
 }
 
 exports.export = function(){
@@ -188,7 +189,8 @@ exports.export = function(){
 		MovieID : MovieID,
 		Guesses : Guesses,
 		HintsUsed : HintsUsed,
-		MoviesDone : MoviesDone
+		MoviesDone : MoviesDone,
+		score : score
 	}
 }
 
