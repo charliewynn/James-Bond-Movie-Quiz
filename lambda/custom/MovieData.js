@@ -179,7 +179,7 @@ const TheManWithTheGoldenGun = {
 	allowedHints : [year, actor, girl, locales, villian, henchmen],
 	factsForWinners : [
 		"The corkscrew car jump in The Man with the Golden Gun was performed in one take",
-		"The man with the golden gun is the only bond film besides the first two which doesn't involve a helicopter at some point"
+		"The man with the golden gun is the only bond film besides doctor no which doesn't involve a helicopter at some point"
 	]
 };
 
